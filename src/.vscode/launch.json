@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - JavaMysqlSelectExample",
+            "request": "launch",
+            "mainClass": "com.javacodegeeks.example.rest.creacliente.JavaMysqlSelectExample"
+        }
+    ]
+}

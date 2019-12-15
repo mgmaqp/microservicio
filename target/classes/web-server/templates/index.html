@@ -1,0 +1,59 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="header :: copy"></head>
+
+<body>
+		<h1>Reto</h1>
+		<h3>Crear cliente</h3>
+	<form action="/creacliente">
+	  	Nombre:<br>
+	  	<input type="text" name="nombre" value="">
+	  	<br>
+	  	Apellido:<br>
+		  <input type="text" name="apellido" value="">
+		  <br>
+	  	Edad:<br>
+		  <input type="number" name="edad" value="0">
+		  <br>
+	  	Fecha de Nacimiento:<br>
+	  	<input type="date" name="fechanacimiento" value="">
+	  	<br><br>
+	  	<input type="submit" value="Submit">
+	</form>
+	<h3>Ver KPI de clientes</h3>
+	<form action="/kpideclientes">
+	  	<input type="submit" value="Submit">
+	</form>
+	<h3>Listar clientes</h3>
+	<form action="/listclientes">
+	  	<input type="submit" value="Submit">
+	</form>
+	<h1>Otros Ejemplos</h1>
+	<h3>SUMA Service</h3>
+	<form action="/add">
+	  	First number:<br>
+	  	<input type="number" name="addend1" value="0">
+	  	<br>
+	  	Second number<br>
+	  	<input type="number" name="addend2" value="0">
+	  	<br><br>
+	  	<input type="submit" value="Submit">
+	</form>	
+	<hr>
+	h3>RESTA Service</h3>
+	<form action="/subtract">
+	  	First number:<br>
+	  	<input type="number" name="minuend" value="0">
+	  	<br>
+	  	Second number<br>
+	  	<input type="number" name="subtrahend" value="0">
+	  	<br><br>
+	  	<input type="submit" value="Submit">
+	</form>
+	<hr>
+	<div th:replace="footer :: copy"></div>
+
+</body>
+</html>

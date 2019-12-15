@@ -1,0 +1,25 @@
+java -jar target/spring-boot-microservices-0.0.1-SNAPSHOT.jar eureka
+java -jar target/spring-boot-microservices-0.0.1-SNAPSHOT.jar addition
+java -jar target/spring-boot-microservices-0.0.1-SNAPSHOT.jar subtraction
+java -jar target/spring-boot-microservices-0.0.1-SNAPSHOT.jar creacliente
+java -jar target/spring-boot-microservices-0.0.1-SNAPSHOT.jar kpideclientes
+java -jar target/spring-boot-microservices-0.0.1-SNAPSHOT.jar listclientes
+java -jar target/spring-boot-microservices-0.0.1-SNAPSHOT.jar web
+
+http://127.0.0.1:1111
+
+
+CREATE TABLE IF NOT EXISTS cliente (id INT AUTO_INCREMENT PRIMARY KEY,nombre VARCHAR(255) NULL,apellido VARCHAR(255) NULL,edad VARCHAR(255) NULL,fechanacimiento TIMESTAMP NULL )
+
+
+
+SELECT id, nombre, apellido, edad, fechanacimiento FROM cliente order by nombre
+SELECT avg(edad) FROM cliente
+(SELECT sqrt(sum(  power( edad-(SELECT avg(edad) FROM cliente) , 2 ))/(SELECT count(1) FROM cliente)) FROM cliente)
+
+
+SELECT id, nombre, apellido, edad, fechanacimiento,   75 - DATEDIFF(NOW(),fechanacimiento)/365, CASE WHEN (DATEDIFF(NOW(),fechanacimiento)/356) <=75 THEN ADDDATE(NOW(), (75 - DATEDIFF(NOW(),fechanacimiento)/356)*365)  ELSE NOW() END fechamuertebase75
+FROM cliente order by nombre;
+
+
+SELECT  CASE WHEN 75 - TIMESTAMPDIFF(YEAR,fechanacimiento,CURDATE()) < 75 THEN ADDDATE(CURDATE(),((75 - TIMESTAMPDIFF(YEAR,fechanacimiento,CURDATE())) * 365)) ELSE CURDATE() END fechamuerte from cliente;
