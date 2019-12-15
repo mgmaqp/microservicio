@@ -28,7 +28,7 @@ public class ListclientesController {
 		String user = mybundle.getString("user");
 		String password = mybundle.getString("password");
 
-		String query = "SELECT  CASE WHEN 75 - TIMESTAMPDIFF(YEAR,fechanacimiento,CURDATE()) < 75 THEN ADDDATE(CURDATE(),((75 - TIMESTAMPDIFF(YEAR,fechanacimiento,CURDATE())) * 365)) ELSE CURDATE() END fechamuerte_base75 from cliente order by nombre";
+		String query = "SELECT  id, nombre, apellido, edad, fechanacimiento, CASE WHEN 75 - TIMESTAMPDIFF(YEAR,fechanacimiento,CURDATE()) < 75 THEN ADDDATE(CURDATE(),((75 - TIMESTAMPDIFF(YEAR,fechanacimiento,CURDATE())) * 365)) ELSE CURDATE() END fechamuerte_base75 from cliente order by nombre";
 		try {
 			Connection con = DriverManager.getConnection(jdbcurl, user, password);
 			Statement st = con.createStatement();
